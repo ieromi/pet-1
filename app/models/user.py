@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import date
 from typing import Union
 
 
@@ -8,7 +8,7 @@ class User(BaseModel):
     first_name: str
     patronymic: Union[str, None] = None
     last_name: Union[str, None] = None
-    dob: Union[datetime, None] = None
+    dob: Union[date, None] = None
     tel_num: str
     email: Union[str, None] = None
 
@@ -22,4 +22,4 @@ external_data = {
 
 user = User(**external_data)
 
-print(user.id)
+print(user)
